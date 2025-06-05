@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UCWS | Bank Confirmation</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #444;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-sizing: border-box;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px auto;
+      background-color: #000;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .radio-group label {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      color: #fff;
+      background-color: #00c4b4;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <span class="logo">UCWS</span>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="mainScreen">
+      <div class="avatar"></div>
+      <h2 id="selectedBankName">Bank Confirmation</h2>
+      <p class="question">Are you registered with the selected Bank?</p>
+
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="bank-confirmation" value="yes" />
+          Yes
+        </label>
+        <label>
+          <input type="radio" name="bank-confirmation" value="no" />
+          No
+        </label>
+      </div>
+
+      <button onclick="window.location.href='voucheramount.html'" class="btn">Next</button>
+
+    </div>
+
+    <div id="nextScreen" class="hidden">
+      <p>Next screen content here (you can customize this or redirect if needed).</p>
+      <button onclick="goBack()" class="btn">Go Back</button>
+    </div>
+  </main>
+
+  <!-- external javascript file -->
+  <script src="/js/bankconfirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UCWS | Post Login and Sign Up</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script> <!-- for profile icon -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333; /* Dark background */
+      color: #fff; /* White text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #444; /* Slightly lighter background for header */
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+   }
+
+    a {
+      display: block;
+      margin: 20px 0;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: #555; /* Divider color */
+      margin: 20px 0;
+    }
+
+    a:last-of-type {
+      font-size: 14px;
+      color: #ccc; /* Lighter text for the last link */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <span class="logo">UCWS</span>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="login.html">I have login details</a>
+    <hr>
+    <a href="Signup.html">I do not have login details</a>
+    <hr>
+    <a href="">
+      If you are already registered, please select "I have login details". 
+      You will be required to enter your username and password.
+    </a>
+  </main>
+
+  <!-- externla javascript file -->
+  <script src="/js/postsignupandlogin.js"></script>
+</body>
+</html>

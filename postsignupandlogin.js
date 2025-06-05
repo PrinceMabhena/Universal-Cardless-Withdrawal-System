@@ -1,0 +1,1 @@
+lucide.createIcons(); // Load Lucide icons

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UCWS | Voucher Amount</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #444;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-sizing: border-box;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px auto;
+      background-color: #000;
+    }
+
+    .greeting {
+      font-size: 16px;
+      margin: 20px 0 10px;
+    }
+
+    .balance {
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: none; /* Initially hide the balance */
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      color: #fff;
+      background-color: #00c4b4;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn.secondary {
+      background-color: transparent;
+      border: 1px solid #ccc;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <span class="logo">UCWS</span>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="avatar"></div>
+    <p class="greeting">Hello, <span id="username">Loading...</span></p>
+    <p class="balance" id="balance">Available Balance: R500.00</p>
+    <p id="scoreDisplay" style="margin-top: 10px; font-weight: bold;"></p>
+    <p id="mathDisplay" style="margin-top: 10px; font-weight: bold;"></p>
+
+    <a href="otpconfirmation.html" class="btn">Transfer</a>
+    <a href="otpconfirmation.html" class="btn">Withdraw</a>
+    <a href="bankconfirmationpage.html" class="btn secondary">Cancel</a>
+  </main>
+
+  <script>
+    // Get the currently logged-in user's name
+    const savedUsername = localStorage.getItem('loggedInUsername');
+    document.getElementById('username').textContent = savedUsername || 'Guest';
+
+    // Function to calculate score based on vouchers used
+    function calculateScore(vouchersUsed) {
+      return vouchersUsed * 10;
+    }
+
+    // Prompt for voucher code and validate
+    const voucherCode = prompt("Enter your voucher code:");
+    if (voucherCode) {
+      const prefix = voucherCode.slice(0, 3).toUpperCase();
+      const isValid = voucherCode.toUpperCase().includes("-VCH");
+      alert(`Prefix: ${prefix}\nVoucher Code Valid: ${isValid ? "Yes" : "No"}`);
+
+      // Display the available balance after voucher code validation
+      document.getElementById('balance').style.display = "block";
+
+      // Example usage: Calculate score based on vouchers used
+      const vouchersUsed = 5; // This could be based on actual logic for voucher usage
+      const score = calculateScore(vouchersUsed);
+      console.log(`Score: ${score}`);
+      document.getElementById('scoreDisplay').textContent = `Your Score: ${score}`;
+    }
+
+    // Math Functions Example
+    const maxAmount = Math.max(100, 200, 50); // Get the maximum value
+    const roundValue = Math.round(15.6); // Round the value
+    console.log(`Max: ${maxAmount}, Rounded: ${roundValue}`);
+    document.getElementById('mathDisplay').textContent = `Max Value: ${maxAmount}, Rounded Value: ${roundValue}`;
+  </script>
+</body>
+</html>

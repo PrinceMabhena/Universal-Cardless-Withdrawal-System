@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UCWS</title>
+  <!-- external css file -->
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script> <!-- for profile icon -->
+  <noscript>
+    <style>
+      body { display: none; }
+    </style>
+    <!-- disbale javascript -->
+    <div class="no-js-message">
+      JavaScript is disabled in your browser. Please enable it to use the Universal Cardless Withdrawal System.
+    </div>
+  </noscript>
+</head>
+<body>
+  <header class="header">
+    <span class="logo">UCWS</span>
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <!-- Profile icon for desktop -->
+    <div class="profile-icon" id="profileIcon">
+      <i data-lucide="user-circle"></i>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="avatar"></div>
+    <h2>Welcome to <strong>UCWS</strong></h2>
+    <p>Unlock savings, Card-free,<br>with ease</p>
+
+    <!-- Show current date -->
+    <p id="dateDisplay" style="margin-top: 10px; font-weight: bold;"></p>
+
+    <!-- Redirect to login page -->
+    <a href="postsignupandloginpage.html" class="btn login">Login</a>
+
+    <p class="or-text">Or</p>
+
+    <!-- Redirect to signup page -->
+    <a href="postsignupandloginpage.html" class="btn signup">Sign Up</a>
+  </main>
+  
+  <!--external landing javascript file -->
+  <script src="/js/landing.js"></script>
+</body>
+</html>

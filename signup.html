@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UCWS | Sign Up</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #444;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-sizing: border-box;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px auto;
+      background-color: #000;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      font-size: 14px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .flex-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .flex-row select {
+      width: 30%;
+      flex-shrink: 0;
+    }
+
+    .flex-row input {
+      width: 70%;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      color: #fff;
+      background-color: #00c4b4;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <span class="logo">UCWS</span>
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="avatar"></div>
+    <h2>Please enter your details below to create an account</h2>
+
+    <form id="signupForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter Name..." />
+
+      <label for="surname">Surname</label>
+      <input type="text" id="surname" placeholder="Enter Surname..." />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter Email..." />
+
+      <label for="cellphone">Cellphone Number</label>
+      <div class="flex-row">
+        <select id="country-code">
+          <option value="+27">+27 (South Africa)</option>
+        </select>
+        <input type="tel" id="cellphone" placeholder="Cellphone Number..." />
+      </div>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter Password..." />
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" placeholder="Re-Enter Password..." />
+
+      <button type="submit" id="submitButton">Create Account</button>
+    </form>
+    <p id="userInfoDisplay" style="margin-top: 20px; font-weight: bold;"></p>
+  </main>
+
+  <!-- external javascript -->
+  <script src="/js/signup.js"></script>
+</body>
+</html>

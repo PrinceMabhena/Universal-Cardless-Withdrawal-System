@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UCWS | Select Bank</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333; /* Dark background */
+      color: #fff; /* White text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Align content to the top */
+      height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #444; /* Slightly lighter background for header */
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px; /* Add spacing below the header */
+      box-sizing: border-box;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px auto;
+      background-color: #000; /* Placeholder for avatar */
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .bank-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 10px; /* Spacing between items */
+      margin: 20px 0;
+    }
+
+    .bank {
+      width: 100%;
+      height: 60px;
+      background-color: #000; /* Placeholder for bank logos */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      flex-direction: column; /* Stack image and text */
+      text-decoration: none; /* Remove underline for links */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .bank span {
+      font-size: 12px;
+      color: #fff;
+      margin-top: 5px; /* Add spacing between image and text */
+    }
+
+    .bank.selected {
+      background-color: #00c4b4; /* Highlight color */
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      color: #fff;
+      background-color: #00c4b4; /* Button color */
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none; /* Remove underline for links */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <span class="logo">UCWS</span>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="avatar"></div>
+    <h2>Select a Bank</h2>
+
+    <div class="bank-grid">
+      <div class="bank" onclick="selectBank(this)"><span>ABSA</span></div>
+      <div class="bank" onclick="selectBank(this)"><span>CAPITEC</span></div>
+      <div class="bank" onclick="selectBank(this)"><span>FNB</span></div>
+      <div class="bank" onclick="selectBank(this)"><span>INVESTEC</span></div>
+      <div class="bank" onclick="selectBank(this)"><span>NEDBANK</span></div>
+      <div class="bank" onclick="selectBank(this)"><span>STANDARD BANK</span></div>
+    </div>
+
+    <a href="bankconfirmationpage.html" class="btn">Next</a>
+    <p id="voucherInfo"></p>
+    <p id="choiceOptions" style="margin-top: 20px; font-weight: bold;"></p>
+  </main>
+
+  <script src="/js/postvoucherpage.js"></script>
+
+</body>
+</html>

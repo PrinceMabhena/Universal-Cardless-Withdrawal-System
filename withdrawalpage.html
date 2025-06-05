@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UCWS | Withdrawal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333; /* Dark background */
+      color: #fff; /* White text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Align content to the top */
+      height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #444; /* Slightly lighter background for header */
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px; /* Add spacing below the header */
+      box-sizing: border-box;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px auto;
+      background-color: #000; /* Placeholder for avatar */
+    }
+
+    p {
+      font-size: 14px;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      height: 15px; /* Match the height of the textboxes */
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      color: #fff;
+      background-color: #00c4b4; /* Button color */
+      border: none;
+      border-radius: 5px; /* Match the rounded corners */
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none; /* Remove underline for links */
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .btn:hover {
+      background-color: #00a89c; /* Darker shade on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    }
+
+    .btn.secondary {
+      background-color: transparent;
+      border: 1px solid #ccc; /* Match the border style */
+      color: #ccc;
+      border-radius: 5px; /* Match the rounded corners */
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .btn.secondary:hover {
+      background-color: #ccc; /* Light gray background on hover */
+      color: #333; /* Darker text color */
+      border-color: #aaa; /* Darker border on hover */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <span class="logo">UCWS</span>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="avatar"></div>
+    <p>A fee of R5 will be charged for withdrawing a different voucher.</p>
+    <p>Available Balance: R495.00</p>
+    <p>Withdrawable Amount: R490.00</p>
+
+    <a href="accept.html" class="btn">Accept</a>
+    <a href="decline.html" class="btn secondary">Decline</a>
+  </main>
+</body>
+<script>
+  // Arrays, Function with Return Type
+const withdrawalOptions = ["ATM", "Bank Teller", "Mobile Money"];
+function showOption(index) {
+  return withdrawalOptions[index] || "Invalid Option";
+}
+
+alert("Withdrawal Method: " + showOption(1));
+</script>
+</html>
